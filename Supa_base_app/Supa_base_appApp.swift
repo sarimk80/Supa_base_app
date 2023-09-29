@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct Supa_base_appApp: App {
+    
+    @StateObject private var authViewModel = AuthViewModel()
+    @StateObject private var navigationVM = NavigationViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(authViewModel)
+                .environmentObject(navigationVM)
         }
     }
 }
